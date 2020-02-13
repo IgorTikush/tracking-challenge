@@ -1,0 +1,417 @@
+
+
+// ### Primary
+$color-red: hsl(0, 100%, 68%);
+$color-very-dark-blue: hsl(256, 26%, 20%);
+$color-dark-greyish-blue: hsl(216, 30%, 68%);
+$color-grayish-blue: hsl(231, 7%, 65%);
+$color-light-grayish-blue: hsl(207, 33%, 95%);
+//### Accent
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62,5%; // 10rem = 10px
+    
+
+
+}
+
+body {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+   
+    font-weight: 400;
+    padding: 1.6rem;
+    font-size: 1.3rem;
+
+    @media only screen and (min-width: 62.5em) {
+        
+       
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 50%;
+        width: 50%;
+        background-color: $color-light-grayish-blue;
+        z-index: -1;
+        border-radius: 0 0 0 70px;
+    }
+
+    
+}
+
+Body > div::before {
+   
+        background-color: red;
+        height: 50%;
+        width: 50%;
+    
+}
+
+h1 {
+    text-transform: uppercase;  
+    
+
+    @media only screen and (min-width: 62.5em) {
+        
+}
+}
+
+h2 {
+  
+}
+
+
+.header {
+    
+
+    @media only screen and (min-width: 62.5em) {
+    margin: 4rem 10rem 4rem 10rem;    
+    display: flex;
+    }
+    &__logo {
+       margin-right: auto;
+        img {
+            width: 1.7rem;
+            @media only screen and (min-width: 62.5em) {
+                width: 2.5rem;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 62.5em) {
+        
+       
+}
+}
+.navigation {
+    &__checkbox {
+        display: none;
+    }
+   
+
+    &__button {
+       
+        
+        position: absolute;
+        top: 2.4rem;
+        right: 2rem;
+        z-index: 2000;
+        text-align: center;
+        cursor: pointer;
+      
+        border-width: 2px;
+        @media only screen and (min-width: 62.5em) {
+            display: none;
+        }
+    }
+
+    
+
+    &__nav {
+     
+        background-color: white;
+        height: 18rem;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        z-index: 1500;
+        margin-top: 10rem;
+       
+        
+        opacity: 0;
+        width: 0;
+        //margin-left: -1000px;
+        
+        box-shadow: .1rem .1rem 1rem rgba($color: #000000, $alpha: .5);
+
+       
+
+        @media only screen and (min-width: 62.5em) {
+            width: auto;
+            margin: 0;
+            opacity: 1;
+            height: 100%;
+            position: relative;
+            transform: none;
+            left: 0;
+            background-color: transparent;
+            box-shadow: none;
+           
+        }
+        
+    }
+
+    &__list {
+        padding-top: 1rem;
+        
+        list-style: none;
+        text-align: center;
+        width: 100%;
+
+        @media only screen and (min-width: 62.5em) {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+           padding-top: 0;
+        }
+        
+        
+    }
+
+
+    &__item {
+        margin: 0 3rem;
+        color: red;
+        @media only screen and (min-width: 62.5em) {
+            margin: 0;
+        }
+        
+
+        &:last-child {
+            border-top: $color-dark-greyish-blue solid 1px;
+            margin-top: 1rem;
+
+            @media only screen and (min-width: 62.5em) {
+               border: none;
+               margin-top: 0;
+               list-style: inside ;
+               margin-left: 2rem;
+               color:$color-grayish-blue;
+            }
+        }
+    }
+
+    &__link {
+        
+       
+        &:link,
+        &:visited {
+            color: black;
+            display: inline-block;
+            font-size: 1.5rem;
+            margin: 1rem 2rem;
+            
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all .4s;
+
+            @media only screen and (min-width: 62.5em) {
+                padding: 0;
+                color: black;
+                font-size: 1.3rem;
+                margin: .3rem 1rem;
+            }
+            
+            
+            
+        }
+        &__last {
+            &:link,
+            &:visited {
+            color: $color-dark-greyish-blue;
+            margin-top: 1rem;
+            @media only screen and (min-width: 62.5em) {
+                padding: 0;
+                
+               
+                margin: .3rem 1rem;
+            }
+            }
+        }
+        
+
+    }
+
+    //ICON
+
+    &__icon {
+        
+        position: relative;
+        
+       
+        @media only screen and (min-width: 62.5em) {
+            top: -1000px;
+        }
+
+        &,
+        &::before,
+        &::after {
+            width: 1.7rem;
+            height: 3px;
+            background-color: black;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before {
+            top: -.5rem;
+        }
+
+        &::after {
+            top: .5rem;
+        }
+    }
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+    
+    //Functionality
+
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 20.5REM;
+        
+    }
+    
+
+}
+
+.intro {
+    
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    
+    @media only screen and (min-width: 62.5em) {
+        flex-direction: row-reverse;
+        margin-left: 10rem;
+        padding-top: 0;
+    }
+   
+    &__img {
+       position: relative;
+        margin-right: -26px;
+        overflow: hidden;
+        @media only screen and (min-width: 62.5em) {
+            flex: 1;
+        }
+        img {
+           
+            margin-left: -22px;
+            width: 147%;
+           
+        }
+    }
+
+    &__text {
+        
+        padding-top: 3rem;
+        @media only screen and (min-width: 62.5em) {
+        padding-top: 2rem;
+        padding-right: 11%;
+        width: 49%;
+        }
+        &__features {
+            letter-spacing: .2rem;
+            color: $color-grayish-blue;
+            font-size: 1rem;
+            span {
+                letter-spacing: 0;
+                background-color: black;
+                color: white;
+                font-weight: 700;
+                padding: .2rem .9rem;
+                border-radius: 15px;
+                margin-right: 0.5rem;
+                
+            }
+        }
+
+        h1 {
+            padding-top: 1rem;
+            font-size: 2.7rem;
+            @media only screen and (min-width: 62.5em) {
+                padding: 1rem 0;
+                font-size: 3.9rem;
+                max-width: 34rem;
+            }
+        }
+
+        h2 {
+            padding-top: .5rem;
+            color: $color-grayish-blue;
+
+            font-weight: 400;
+            font-size: 1.4rem;
+            @media only screen and (min-width: 62.5em) {
+               max-width: 18rem;
+            }
+        }
+        &__cta {
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+            font-size: 1rem;
+            color: $color-grayish-blue;
+            letter-spacing: .1rem;
+            text-transform: uppercase;
+            @media only screen and (min-width: 62.5em) {
+                padding-top: 2rem;
+                font-size: .8rem;
+                letter-spacing: .3rem;
+            }
+        button {
+            border-style: none;
+            background-color: $color-red;
+            color: white;
+            letter-spacing: .1rem;
+            text-transform: uppercase;
+            transform: scaleY(1.2);
+            padding: .6rem 1.5rem;
+            font-weight: 700;
+            border-radius: 6px;
+           margin-right: 1rem;
+            outline: none;
+            @media only screen and (min-width: 62.5em) {
+                font-size: .7rem;
+                letter-spacing: 0;
+                padding: .7rem 2rem;
+            }
+            &:active {
+                background-color: $color-red;
+                opacity: 0.5;
+            }
+        }
+    }
+    }
+
+
+}
+
+
+
+   
